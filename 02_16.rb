@@ -5,6 +5,6 @@ users = [
   { name: "nakamura", age: 41 }
 ]
 
-users.each do | user |
+users.each do |user|
   p "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
 end

@@ -1,30 +1,23 @@
-  $plans = [
-    { place: "沖縄", price: 10000 },
-    { place: "北海道", price: 20000 },
-    { place: "九州", price: 15000 }
-  ]
-  def travel
-    puts "旅行プランを選択して下さい"
-    $plans.each_with_index do | plan, id |
-      puts "#{id + 1}. #{plan[:place]}旅行 (¥#{plan[:price]})"
-    end
-      
-    print "\nプランを選択 > "
 
-    choose_plan = gets.to_i - 1
-    puts "\n#{$plans[choose_plan][:place]}旅行ですね、何人で行きますか？"
-    print "\n人数を入力 > "
-    peoples = gets.to_i
-    total_price = $plans[choose_plan][:price] * peoples
-    if peoples >= 5
-      puts <<~TOTAL
-        5人以上なので10%割引となります
-        合計料金：¥#{(total_price * 0.9).to_i}
-        TOTAL
-    else
-      p "合計料金：¥#{total_price}"
-    end
-  end
+# プログラムの大まかな内容を箇条書き
+# メソッド名にするために英語で表す
+# メソッドに処理を分ける
+# 動作するように修正
 
+# plan_description 行き先と金額の表示
+# get_plan プランを選択させる
+# get_peoples 人数を選択させる
+# total_price 金額の計算(割引込)
 
-travel
+require './02_22_methods'
+
+plans = [
+  { place: "沖縄", price: 10000 },
+  { place: "北海道", price: 20000 },
+  { place: "九州", price: 15000 }
+]
+
+plan_description(plans)
+choose_plan = get_plan(plans)
+peoples = get_peoples(choose_plan)
+total_price(peoples, choose_plan)
