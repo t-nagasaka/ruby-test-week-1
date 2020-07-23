@@ -1,7 +1,7 @@
 require "pry"
 
 class Zoo
-  def initialize(params)
+  def initialize(**params)
     # binding.pry
     @name = params[:name]
     @infant = params.dig(:entry_fee, :infant)

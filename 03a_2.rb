@@ -1,14 +1,14 @@
 class User
-  def initialize(params)
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
   end
 
   def introduce
     if @age < 20
-      print "はいさいまいど〜，#{@name}です！！！"
+      "はいさいまいど〜，#{@name}です！！！"
     else
-      print "こんにちは，#{@name}と申します。宜しくお願いいたします。"
+      "こんにちは，#{@name}と申します。宜しくお願いいたします。"
     end
   end
 end
